@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test COM</title>
+    <script src="./public/js/jquery.min.js"></script>  
+    <script src="./public/js/flexible.js"></script> 
+    <link rel="stylesheet" href="./public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/css/index.css">
+   
+</head>
+<body onload='myFunction()'>
+        <div class="body-box">
+            <div class="tool-bar">
+                <div class="select-data">
+                    <div class="form-group">
+                        <label for="disabledSelect">Select Port</label>
+                        <select id="disabledSelect" class="form-control com">
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label for="BaudRate">Baudrate</label>
+                        <input type="text" class="form-control" id="BaudRate" value="115200">
+                    </div>
+                </div>
+                <div class="submit-data">
+                    <button class="btn btn-primary btn-block btn-submit">open</button>
+                    <button class="btn btn-primary btn-block btn-close">close</button>
+                </div>
+            </div>
+            <div class="content-box">
+                <div class="protocol-box">
+                        <div class="send-header">
+                            <label>Protocol Send</label>
+                        </div>
+                        <div class="send-pro">
+                                <div class="btn-box" id="content">   
+                                   <!--create element by js     
+                                     <div class="item_c">
+                                         <select></select>
+                                         <button></button>
+                                     </div>     
+                                     <div class="item_c">
+                                        <select></select>
+                                        <button></button>
+                                    </div> 
+                                    <div class="item_c">
+                                        <select></select>
+                                        <button></button>
+                                    </div> 
+                                    <div class="item_c">
+                                        <select></select>
+                                        <button></button>
+                                    </div>   -->                 
+                                </div>
+                        </div>
+                    </div>
+                    <div class="receive-box">
+                        <div class="send-header">
+                            <label>Rec MSG</label>
+                        </div>
+                        <div class="receive-windows">
+                        </div>
+                        
+                            
+                        </div>
+                        
+                </div>
+                
+
+             
+            </div>
+        </div>
+
+<script> 
+ const  text = [];
+function myFunction() {
+    $(document).ready(function () {
+        text.length=40
+    var array = [];
+    for(var i=0;i<10 ;i++)
+    {
+        array[i]="protocol "+(i+1)
+    }
+    for(var i = 1; i < text.length+1; i += 1) {
+        //create div item
+        var item_dev = document.createElement("div");
+        item_dev.className = "item_c"
+        item_dev.id = "item"+i
+        item_dev.innerHTML = "node"+i
+        document.getElementById("content").appendChild(item_dev);
+        //create select
+        var sel = document.createElement("select");
+        sel.className = "btn protocol-sel";
+        sel.innerHTML = "node";
+        document.getElementById("item"+i).appendChild(sel);
+        //create select option
+        for (var j = 0; j < array.length; j++) {
+            var option = document.createElement("option");
+            option.value = array[j];
+            option.text = array[j];
+            sel.appendChild(option);
+        }
+        //create button
+        var div = document.createElement("button");
+        div.className = "btn protocol-btn";
+        div.innerHTML = "send";
+        document.getElementById("item"+i).appendChild(div);
+
+    }
+        })
+   var btn_tab = document.querySelectorAll("div.item_c");
+   
+    alert('num ' +btn_tab.length);
+   
+}
+ require('./render.js')
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test COM</title>
+    <script src="./public/js/jquery.min.js"></script>  
+    <script src="./public/js/flexible.js"></script> 
+    <link rel="stylesheet" href="./public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/css/index.css">
+  
+</head>
+<body>
+        <div class="body-box">
+            <div class="tool-bar">
+                <div class="select-data">
+                    <div class="form-group">
+                        <label for="disabledSelect">Select Port</label>
+                        <select id="disabledSelect" class="form-control com">
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label for="BaudRate">Baudrate</label>
+                        <input type="text" class="form-control" id="BaudRate" value="115200">
+                    </div>
+                </div>
+                <div class="submit-data">
+                    <button class="btn btn-primary btn-block btn-submit">open</button>
+                    <button class="btn btn-primary btn-block btn-close">close</button>
+                </div>     
+               
+            </div>
+            <div class="content-box">
+                <div class="receive-box">
+                    <div class="send-header">
+                        <label>Rec MSG</label>
+                    </div>
+                    <div class="receive-windows">
+                    </div>
+                </div>
+
+                <div class="send-box">
+                    <div class="send-header">
+                        <label>Send MSG</label>
+                    </div>
+                     <div class="send-windows">
+                     <textarea class="input-send-data"></textarea>
+                      </div>
+                     <div class="send-btn">
+                        <div class="btn-box">
+                            <div class="btn btn-warning btn-send">Send</div>&nbsp&nbsp&nbsp
+                            <div class="btn btn-danger btn-reset">Clean</div>
+                        </div>
+                        </div>
+             </div>
+            </div>
+        </div>
+
+<script> 
+   require('./render.js')
+</script>
+</body>
+</html>
